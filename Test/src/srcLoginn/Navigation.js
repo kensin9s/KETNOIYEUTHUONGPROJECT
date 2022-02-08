@@ -11,7 +11,7 @@ import OTP from './OTP';
 const Stack = createStackNavigator();
 
 
-function MyStack() {
+function MyStack1() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Login" component={Login} />
@@ -31,7 +31,7 @@ function MyStack() {
 const  AppContainer = () => {
     return (
         <NavigationContainer>
-            <MyStack />
+            <MyStack1 />
         </NavigationContainer>
     )
 }

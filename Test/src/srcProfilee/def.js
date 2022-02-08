@@ -16,14 +16,10 @@ import Comunity from '../srcProfilee/svgProfile/comunityy.svg';
 import Manage from '../srcProfilee/svgProfile/managee.svg';
 import Message from '../srcProfilee/svgProfile/messagee.svg';
 import Account from '../srcProfilee/svgProfile/accountt.svg';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import abc from './abc';
 
-import Login from '../srcLoginn/Login';
-import Register from '../srcLoginn/Register';
-import Forgotpassword from '../srcLoginn/Forgotpassword';
-import Resetpassword from '../srcLoginn/Resetpassword';
-import OTP from '../srcLoginn/OTP';
-
-
+const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
@@ -38,8 +34,8 @@ function MyTabs() {
       <Tab.Screen name="cộng đồng" component={Settingaccount}  options={{
    //tabBarStyle: { display: "none" },
    tabBarLabel: 'Cộng đồng',
-   tabBarIcon: ({ color, size }) => (color='red',
-     <Comunity size={20}/>
+   tabBarIcon: ({ color, size }) => (
+   <MaterialCommunityIcons name="Comunity" color={color} size={size} />
    ),
 }}/>
       <Tab.Screen name="Tin Nhắn" component={setupnotifications} options={{
@@ -63,26 +59,7 @@ function MyTabs() {
   );
   
 }
-const Stack1 = createStackNavigator();
 
-
-function MyStack1() {
-  return (
-    <Stack1.Navigator screenOptions={{ headerShown: false }}>
-      <Stack1.Screen name="Login" component={Login} />
-      <Stack1.Screen name="Register" component={Register} />
-      <Stack1.Screen name="Forgotpassword" component={Forgotpassword} />
-      <Stack1.Screen name="OTP" component={OTP} />
-      <Stack1.Screen name="Resetpassword" component={Resetpassword} />
-   
-    
-   
-
-    </Stack1.Navigator>
-    
-  );
-}
-const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false ,}}>
@@ -95,8 +72,6 @@ function MyStack() {
       <Stack.Screen name="verificationEmail" component={verificationEmail} />
       <Stack.Screen name="verificationEmail1" component={verificationEmail1} />
       <Stack.Screen name="evaluateApp" component={evaluateApp} />
-      <Stack.Screen name="Mystack1" component={MyStack1} />
-
     </Stack.Navigator>
   );
 }
@@ -105,7 +80,9 @@ const  AppContainer = () => {
     return (
         <NavigationContainer>
           <MyTabs>
+         
           </MyTabs>
+          
         </NavigationContainer>
     )
 }

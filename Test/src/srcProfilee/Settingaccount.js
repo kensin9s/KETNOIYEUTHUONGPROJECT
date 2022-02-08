@@ -31,7 +31,7 @@ const settingacc = () => {
                 </TouchableOpacity>
             </View>
             <View style={styles.setting}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress = { () => {navigate('Mystack1')}}>
                     <Text style={{ fontSize: 14, alignSelf:'center', color: '#FF0000',marginTop:21  }}>Đăng xuất</Text>
                 </TouchableOpacity>
             </View>

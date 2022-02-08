@@ -125,7 +125,7 @@ const UselessTextInput = () => {
             </View>
 
 
-            <View style={{ flexDirection: 'row', marginTop: 14, }}>
+            {/* <View style={{ flexDirection: 'row', marginTop: 14, }}>
                 <View >
                     <TouchableOpacity>
                         <Home style={{ marginTop: 10, marginLeft: 10, }} />
@@ -154,7 +154,7 @@ const UselessTextInput = () => {
 
 
 
-            </View>
+            </View> */}
 
         </SafeAreaView>
     );
