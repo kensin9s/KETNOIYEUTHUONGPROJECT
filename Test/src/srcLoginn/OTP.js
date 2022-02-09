@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet, TextInput, Text, ImageBackground, Image, Touc
 import { useNavigation } from '@react-navigation/native';
 import styles from "./stylesLogin"
 import OTPInputView from '@twotalltotems/react-native-otp-input';
+import Logo from '../srcLoginn/svgLoginn/Logo.svg';
 const Login = () => {
   const { navigate } = useNavigation();
   const [text, onChangeText] = React.useState(null);
@@ -13,7 +14,7 @@ const Login = () => {
 
   return (
     <SafeAreaView>
-      <Image source={image} style={styles.image2} />
+      <Logo style={styles.image2} />
 
      <Text style={{fontSize:14,lineHeight:19.07,alignSelf:'center',fontWeight:'bold',color:'#212529',marginBottom:18,}}>
        Nhạp mã OTP để xác nhận

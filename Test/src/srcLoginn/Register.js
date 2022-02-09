@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import styles from "./stylesLogin"
 import Eye from '../srcLoginn/svgLoginn/Eye.svg';
 import SlashEye from '../srcLoginn/svgLoginn/slashEye.svg';
+import Logo from '../srcLoginn/svgLoginn/Logo.svg';
 const Login = () => {
   const { navigate } = useNavigation();
   const [text, onChangeText] = React.useState(null);
@@ -15,7 +16,7 @@ const Login = () => {
 
   return (
     <SafeAreaView>
-      <Image source={image} resizeMode="center" style={styles.image} />
+      <Logo resizeMode="center" style={styles.image} />
 
       <TextInput
         style={styles.input}

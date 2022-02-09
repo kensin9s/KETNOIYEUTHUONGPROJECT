@@ -22,70 +22,55 @@ import Register from '../srcLoginn/Register';
 import Forgotpassword from '../srcLoginn/Forgotpassword';
 import Resetpassword from '../srcLoginn/Resetpassword';
 import OTP from '../srcLoginn/OTP';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { mdiAccount } from '@mdi/js';
 
 
 const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false ,tabBarActiveTintColor:'#60B939'}}>
-      <Tab.Screen name="Home"  component={MyStack} options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <Home size={20}/>
-          ),
-        }}>
+    <Tab.Navigator screenOptions={{ headerShown: false, tabBarActiveTintColor: '#60B939' }}>
+      <Tab.Screen name="Home" component={MyStack} options={{
+        tabBarLabel: 'Home',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="home" color={color} size={size} />
+        ),
+      }}>
       </Tab.Screen>
-      <Tab.Screen name="cộng đồng" component={Settingaccount}  options={{
-   //tabBarStyle: { display: "none" },
-   tabBarLabel: 'Cộng đồng',
-   tabBarIcon: ({ color, size }) => (color='red',
-     <Comunity size={20}/>
-   ),
-}}/>
+      <Tab.Screen name="cộng đồng" component={Settingaccount} options={{
+        //tabBarStyle: { display: "none" },
+        tabBarLabel: 'Cộng đồng',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="hand-heart" color={color} size={size} />
+        ),
+      }} />
       <Tab.Screen name="Tin Nhắn" component={setupnotifications} options={{
-          tabBarLabel: 'Tin Nhắn',
-          tabBarIcon: ({ color, size }) => (
-            <Message size={20}/>
-          ),
-        }} />
+        tabBarLabel: 'Tin Nhắn',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="facebook-messenger" color={color} size={size} />
+        ),
+      }} />
       <Tab.Screen name="Quản lí" component={setupnotifications} options={{
-          tabBarLabel: 'Quản lí',
-          tabBarIcon: ({ color, size }) => (
-            <Manage size={20}/>
-          ),}}/>
+        tabBarLabel: 'Quản lí',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="format-list-bulleted" color={color} size={size} />
+        ),
+      }} />
       <Tab.Screen name="Tài khoản" component={Profile1} options={{
-          tabBarLabel: 'Tài khoản',
-          tabBarIcon: ({ color, size }) => (
-            <Account size={20}/>
-          ),
-        }} />
-    </Tab.Navigator>  
+        tabBarLabel: 'Tài khoản',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="account-circle" color={color} size={size} />
+        ),
+      }} />
+    </Tab.Navigator>
   );
-  
+
 }
-const Stack1 = createStackNavigator();
 
-
-function MyStack1() {
-  return (
-    <Stack1.Navigator screenOptions={{ headerShown: false }}>
-      <Stack1.Screen name="Login" component={Login} />
-      <Stack1.Screen name="Register" component={Register} />
-      <Stack1.Screen name="Forgotpassword" component={Forgotpassword} />
-      <Stack1.Screen name="OTP" component={OTP} />
-      <Stack1.Screen name="Resetpassword" component={Resetpassword} />
-   
-    
-   
-
-    </Stack1.Navigator>
-    
-  );
-}
 const Stack = createStackNavigator();
 function MyStack() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false ,}}>
+    <Stack.Navigator screenOptions={{ headerShown: false, }}>
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Settingaccount" component={Settingaccount} />
       <Stack.Screen name="setupnotifications" component={setupnotifications} />
@@ -100,14 +85,32 @@ function MyStack() {
     </Stack.Navigator>
   );
 }
+const Stack1 = createStackNavigator();
 
-const  AppContainer = () => {
-    return (
-        <NavigationContainer>
-          <MyTabs>
-          </MyTabs>
-        </NavigationContainer>
-    )
+
+function MyStack1() {
+  return (
+    <Stack1.Navigator screenOptions={{ headerShown: false }}>
+      <Stack1.Screen name="Login" component={Login} />
+      <Stack1.Screen name="Register" component={Register} />
+      <Stack1.Screen name="Forgotpassword" component={Forgotpassword} />
+      <Stack1.Screen name="OTP" component={OTP} />
+      <Stack1.Screen name="Resetpassword" component={Resetpassword} />
+
+
+
+
+    </Stack1.Navigator>
+
+  );
+}
+const AppContainer = () => {
+  return (
+    <NavigationContainer>
+      <MyTabs>
+      </MyTabs>
+    </NavigationContainer>
+  )
 }
 
 export default AppContainer; 

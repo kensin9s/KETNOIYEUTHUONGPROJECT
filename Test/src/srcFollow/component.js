@@ -5,23 +5,17 @@ import styles from "./stylesFollow"
 
 const Component = ({id, name, image, isFollow, fromList}) => {
     const [textFollowed, setTextFollowed] = useState('');
+    const [countFollow, setCountFollow] = useState(5);
     const [IsFollowStatus, setIsFollowStatus] = useState(isFollow);
-    useEffect(() => {
-        if(isFollow === true){
-            setTextFollowed('Theo dõi');
-            setIsFollowStatus(isFollow);
-        }
-        else{
-            setTextFollowed('Bỏ Theo dõi');
-            setIsFollowStatus(isFollow);
+    console.log("ahihi", countFollow);
 
-        }
-    }, []);
     const changeStatus = () => {
         
         if(IsFollowStatus === true){
             setTextFollowed('Bỏ theo dõi');
             setIsFollowStatus(false);
+            
+            setCountFollow(countFollow + 1);
             dataList.push({id:id, name: name, image: image, isFollow: isFollow});
         }
         else {     
@@ -34,6 +28,10 @@ const Component = ({id, name, image, isFollow, fromList}) => {
         // dataList.splice(dataDelete, 1);
             setTextFollowed('Theo dõi');
             setIsFollowStatus(true);
+            
+            if (countFollow > 0) {
+                setCountFollow(countFollow - 1);
+            }
         }
     }
     return (
@@ -42,13 +40,12 @@ const Component = ({id, name, image, isFollow, fromList}) => {
             <Text style={{ marginLeft: 11, marginTop: 27, fontSize:14,flex: 0.99, }}>{name}</Text>
             {fromList ? (
                 <TouchableOpacity style={IsFollowStatus ? styles.touchA : styles.touchA1} onPress={changeStatus}>
-                 <Text style={styles.TextA}>{textFollowed}</Text>
+                 <Text style={styles.TextA}>{IsFollowStatus ? "Theo dõi" : "Bỏ theo dõi"}</Text>
                 </TouchableOpacity>
             )  : (
                 <View/>
             )
             }
-            
         </View>
     )
 }

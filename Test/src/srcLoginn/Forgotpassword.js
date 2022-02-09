@@ -2,6 +2,7 @@ import React from "react";
 import { SafeAreaView, StyleSheet, TextInput, Text, ImageBackground, Image, TouchableOpacity, View } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import styles from "./stylesLogin"
+import Logo from '../srcLoginn/svgLoginn/Logo.svg';
 const Login = () => {
   const { navigate } = useNavigation();
   const [text, onChangeText] = React.useState(null);
@@ -12,7 +13,7 @@ const Login = () => {
 
   return (
     <SafeAreaView>
-      <Image source={image} style={styles.image2} />
+      <Logo style={styles.image2} />
 
      <Text style={{width:117,height:19,fontSize:14,lineHeight:19.07,alignSelf:'center',fontWeight:'bold',color:'#212529',marginBottom:18,}}>
        Lấy lại mật khẩu
