@@ -88,7 +88,7 @@ function MyStack() {
       <Stack.Screen name="verificationEmail" component={verificationEmail} />
       <Stack.Screen name="verificationEmail1" component={verificationEmail1} />
       <Stack.Screen name="evaluateApp" component={evaluateApp} />
-      <Stack.Screen name="Mystack1" component={MyStack1} />
+      {/* <Stack.Screen name="Mystack1" component={MyStack1} /> */}
       
     </Stack.Navigator>
   );
