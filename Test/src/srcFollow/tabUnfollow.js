@@ -10,8 +10,8 @@ const SecondRoute = () => {
       <SafeAreaView>
         <View style={{ marginTop: 15, }}>
           {
-            data.map(item => (
-              <Component id={item.id} name={item.name} image={item.image} isFollow={item.isFollow} fromList={true}/>
+            data.map((item, index) => (
+              <Component id={item.id} index={index} name={item.name} image={item.image} isFollow={item.isFollow} fromList={true}/>
             ))
           }
         </View>

@@ -3,13 +3,13 @@ const data = [
       id: '1',
       name: 'SasukeUchiha',
       image: "https://1.bp.blogspot.com/-athYv-H0N6U/WuHQwmUaiKI/AAAAAAAAvrU/U0QM5Te_Oa4K4T-b9DgI1f0gOpQHhYLSgCLcBGAs/s640/hinh-anh-sasuke-ngau-9.jpg",
-      isFollow: false,
+      isFollow: true,
     },
     {
       id: '2',
       name: 'SasukeUchiha1',
       image: "https://3.bp.blogspot.com/-tQYduFPdmE0/WuHQptMcgoI/AAAAAAAAvqI/gGXd7BDaoug66jNYDvTGEpgEPX794IFCwCLcBGAs/s640/hinh-anh-sasuke-ngau-11.jpg",
-      isFollow: false,
+      isFollow: true,
     },
     {
       id: '3',

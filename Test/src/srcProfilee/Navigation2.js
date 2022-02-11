@@ -30,7 +30,7 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false, tabBarActiveTintColor: '#60B939' }}>
-      <Tab.Screen name="Home" component={MyStack} options={{
+      <Tab.Screen name="Home" component={MyStack1} options={{
         tabBarLabel: 'Home',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={size} />
@@ -56,7 +56,7 @@ function MyTabs() {
           <MaterialCommunityIcons name="format-list-bulleted" color={color} size={size} />
         ),
       }} />
-      <Tab.Screen name="Tài khoản" component={Profile1} options={{
+      <Tab.Screen name="Tài khoản" component={MyStack} options={{
         tabBarLabel: 'Tài khoản',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="account-circle" color={color} size={size} />

@@ -12,11 +12,17 @@ import { SafeAreaView, StyleSheet, TextInput, Text, ImageBackground, Image, Touc
 
 export default function TabViewExample() {
   const layout = useWindowDimensions();
+  const [countFollow, setCountFollow] = React.useState(data.filter(i => i.isFollow == true).length)
+  
+  React.useEffect(() => {
+      setCountFollow(data.filter(i => i.isFollow == true).length)   
+      console.log('ahihi', data.filter(i => i.isFollow == true)) 
+  }, [data.filter(i => i.isFollow == true).length])
 
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'first', title: '5 người theo dõi' ,},
-    { key: 'second', title: 'Theo dõi 5 người' },
+    { key: 'first', title:''},
+    { key: 'second', title:'' },
   ]);
 
   const renderScene = SceneMap({
@@ -30,14 +36,13 @@ export default function TabViewExample() {
       style={{ backgroundColor: '#FFFFFF',}}
       renderLabel={({ route, focused, color }) => (
         <Text style={{ color:'black', margin: 8 }}>
-          {route.title}
+          {route.key == "first" ? countFollow + " nguoi theo doi" : "theo doi " + 5 + " nguoi"}
         </Text>
       )}
     />
   );
 
   return (
-    
     <TabView
       navigationState={{ index, routes }}
       renderScene={renderScene}

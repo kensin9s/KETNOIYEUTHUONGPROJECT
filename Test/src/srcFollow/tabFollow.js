@@ -3,20 +3,21 @@ import { View, useWindowDimensions } from 'react-native';
 import { TabView, SceneMap ,TabBar} from 'react-native-tab-view';
 import styles from "./stylesFollow"
 import Component from "./component";
-import dataList from './dataFollow';
+import dataList from './dataUnfollow';
 import dataList1 from './component';
 import { SafeAreaView, StyleSheet, TextInput, Text, ImageBackground, Image, TouchableOpacity,} from "react-native";
 const FirstRoute = () => {
+    const dataFollow = dataList.filter(i => i.isFollow == true);
     return (
-    <SafeAreaView>
-        <View style={{ marginTop: 15, }}>
-        {
-            dataList.map(item => (
-            <Component id={item.id} name={item.name} image={item.image} isFollow={item.isFollow} fromList={false}/>
-            ))
-        }
-        </View>
-    </SafeAreaView>
+        <SafeAreaView>
+            <View style={{ marginTop: 15, }}>
+            {
+                dataFollow.map((item, index) => (
+                <Component id={item.id} index={index} name={item.name} image={item.image} isFollow={item.isFollow} fromList={false}/>
+                ))
+            }
+            </View>
+        </SafeAreaView>
     )
 }
   
