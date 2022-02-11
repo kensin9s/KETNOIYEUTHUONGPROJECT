@@ -6,6 +6,7 @@ import Component from "./component";
 import FirstRoute from './tabFollow';
 import SecondRoute from './tabUnfollow';
 import data from './dataUnfollow';
+import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView, StyleSheet, TextInput, Text, ImageBackground, Image, TouchableOpacity,} from "react-native";
 
 

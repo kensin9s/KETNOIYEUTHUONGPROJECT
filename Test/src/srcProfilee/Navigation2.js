@@ -24,20 +24,25 @@ import Resetpassword from '../srcLoginn/Resetpassword';
 import OTP from '../srcLoginn/OTP';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { mdiAccount } from '@mdi/js';
+import navifolloww from '../srcFollow/naviFollow';
+import Followers from '../srcFollow/Followers';
+import listfollow from '../srcFollow/listfollow';
 
 
 const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false, tabBarActiveTintColor: '#60B939' }}>
-      <Tab.Screen name="Home" component={MyStack1} options={{
+      
+      <Tab.Screen name="Home" component={MyStack} options={{
+        // tabBarStyle: { display: "none" },
         tabBarLabel: 'Home',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={size} />
         ),
       }}>
       </Tab.Screen>
-      <Tab.Screen name="cộng đồng" component={Settingaccount} options={{
+      <Tab.Screen name="cộng đồng" component={MyStack2} options={{
         //tabBarStyle: { display: "none" },
         tabBarLabel: 'Cộng đồng',
         tabBarIcon: ({ color, size }) => (
@@ -50,7 +55,7 @@ function MyTabs() {
           <MaterialCommunityIcons name="facebook-messenger" color={color} size={size} />
         ),
       }} />
-      <Tab.Screen name="Quản lí" component={setupnotifications} options={{
+      <Tab.Screen name="Quản lí" component={Settingaccount} options={{
         tabBarLabel: 'Quản lí',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="format-list-bulleted" color={color} size={size} />
@@ -70,7 +75,10 @@ function MyTabs() {
 const Stack = createStackNavigator();
 function MyStack() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false, }}>
+    
+    <Stack.Navigator screenOptions={{ headerShown: false, tabBarHideOnKeyboard: true,
+      tabBarStyle: [{ display: "flex" }, null]}}>
+      
       <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Settingaccount" component={Settingaccount} />
       <Stack.Screen name="setupnotifications" component={setupnotifications} />
@@ -81,7 +89,7 @@ function MyStack() {
       <Stack.Screen name="verificationEmail1" component={verificationEmail1} />
       <Stack.Screen name="evaluateApp" component={evaluateApp} />
       <Stack.Screen name="Mystack1" component={MyStack1} />
-
+      
     </Stack.Navigator>
   );
 }
@@ -90,25 +98,54 @@ const Stack1 = createStackNavigator();
 
 function MyStack1() {
   return (
-    <Stack1.Navigator screenOptions={{ headerShown: false }}>
+    <Stack1.Navigator screenOptions={{ headerShown: false,tabBarHideOnKeyboard: true,
+      tabBarStyle: [{ display: "flex" }, null] }}>
       <Stack1.Screen name="Login" component={Login} />
       <Stack1.Screen name="Register" component={Register} />
       <Stack1.Screen name="Forgotpassword" component={Forgotpassword} />
       <Stack1.Screen name="OTP" component={OTP} />
       <Stack1.Screen name="Resetpassword" component={Resetpassword} />
-
-
-
+      <Stack1.Screen name="prrofile" component={MyStack} />
+      <Stack1.Screen name="tab" component={MyTabs} />
+     
 
     </Stack1.Navigator>
 
   );
 }
+const Stack3 = createStackNavigator();
+
+
+function MyStack3() {
+  return (
+    <Stack3.Navigator screenOptions={{ headerShown: false }}>
+      <Stack3.Screen name="START" component={MyStack1} />
+      <Stack3.Screen name="Four" component={MyTabs} />
+      <Stack3.Screen name="Second" component={MyStack} />
+      <Stack3.Screen name="Thirst" component={MyStack2} />
+    </Stack3.Navigator>
+
+  );
+}
+
+const Stack2 = createStackNavigator();
+
+
+function MyStack2() {
+  return (
+    <Stack2.Navigator screenOptions={{ headerShown: false,tabBarHideOnKeyboard: true,
+      tabBarStyle: [{ display: "flex" }, null] }}>
+      {/* <Stack2.Screen name="Followers" component={Followers} /> */}
+      <Stack2.Screen name="listfollow" component={listfollow} />
+    </Stack2.Navigator>
+    
+  );
+}
 const AppContainer = () => {
   return (
     <NavigationContainer>
-      <MyTabs>
-      </MyTabs>
+      <MyStack1>
+      </MyStack1>
     </NavigationContainer>
   )
 }

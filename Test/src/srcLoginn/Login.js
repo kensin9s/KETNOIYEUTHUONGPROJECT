@@ -37,7 +37,7 @@ const Login = () => {
       <TouchableOpacity style={{ marginLeft: 242, marginRight: 16, }} onPress={() => { navigate('Forgotpassword') }} >
         <Text style={styles.baseText}>Quên mật khẩu</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.login} >
+      <TouchableOpacity style={styles.login}  onPress={() => { navigate('tab') }}>
         <View style={{ marginTop: 16, marginLeft: 128, marginRight: 128, marginBottom: 16, }}>
           <Text style={{ fontSize: 14, lineHeight: 19.07, alignSelf: 'center', color: 'white', }} >Đăng nhập</Text>
         </View>
